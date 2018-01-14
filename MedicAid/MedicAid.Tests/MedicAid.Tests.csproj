@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BCF98231-65CD-479B-BA1C-13095323F05F}</ProjectGuid>
+    <ProjectGuid>{0A32D721-6AB0-4EBE-B389-6DE511BF307C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MedicAid.Tests</RootNamespace>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MedicAid\MedicAid.csproj">
-      <Project>{C9521AF8-54BA-400C-83F0-707265F941DA}</Project>
+      <Project>{8EC71B77-99C2-47B9-80A4-47155D375A99}</Project>
       <Name>MedicAid</Name>
     </ProjectReference>
   </ItemGroup>
