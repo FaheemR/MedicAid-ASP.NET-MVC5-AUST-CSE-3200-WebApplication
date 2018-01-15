@@ -212,12 +212,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\jpg\1.jpg" />
+    <Content Include="Asset\jpg\2.jpg" />
+    <Content Include="Asset\jpg\3.jpg" />
     <Content Include="Content\bootstrap-cerulean.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chocolat.css" />
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Asset\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -233,6 +237,11 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="Asset\fonts\fontawesome-webfont.eot" />
+    <Content Include="Asset\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Asset\fonts\fontawesome-webfont.woff" />
+    <Content Include="Asset\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Asset\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\easing.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
