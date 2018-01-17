@@ -8,9 +8,9 @@ namespace MedicAid.Controllers
 {
     public class EmergencyContactsController : Controller
     {
-        public ActionResult EmergencyContact()
+        public ActionResult Index()
         {
-            ViewBag.Message = "Your EmergencyContact page.";
+            ViewBag.Message = "Your Index page.";
 
             return View();
         }

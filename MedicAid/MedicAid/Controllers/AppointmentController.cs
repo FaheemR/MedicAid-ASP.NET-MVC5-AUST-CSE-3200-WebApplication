@@ -8,8 +8,8 @@ namespace MedicAid.Controllers
 {
     public class AppointmentController : Controller
     {
-        // GET: Appointment
-        public ActionResult MakeAppointment()
+        // GET: Index
+        public ActionResult Index()
         {
             return View();
         }

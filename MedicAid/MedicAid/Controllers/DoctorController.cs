@@ -9,9 +9,9 @@ namespace MedicAid.Controllers
     public class DoctorController : Controller
     {
         
-        public ActionResult Doctor()
+        public ActionResult Index()
         {
-            ViewBag.Message = "Your Doctor page.";
+            ViewBag.Message = "Your Index page.";
 
             return View();
         }
