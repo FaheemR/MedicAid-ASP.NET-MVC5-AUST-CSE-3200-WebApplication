@@ -6,15 +6,12 @@ using System.Web.Mvc;
 
 namespace MedicAid.Controllers
 {
-    public class HomeController : Controller
+    public class AppointmentController : Controller
     {
-        public ActionResult Index()
+        // GET: Appointment
+        public ActionResult MakeAppointment()
         {
             return View();
         }
-
-        
-        
-         
     }
 }

@@ -6,15 +6,13 @@ using System.Web.Mvc;
 
 namespace MedicAid.Controllers
 {
-    public class HomeController : Controller
+    public class PharmacyController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Pharmacy()
         {
+            ViewBag.Message = "Your Pharmacy page.";
+
             return View();
         }
-
-        
-        
-         
     }
 }

@@ -10,9 +10,12 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Doctor Information", "Doctor", "Doctor")</li>
+                <li>@Html.ActionLink("Hospital Information", "Hospital", "Hospital")</li>
+                <li>@Html.ActionLink("Pharmacy Information", "Pharmacy", "Pharmacy")</li>
+                <li>@Html.ActionLink("Emergency Contacts", "EmergencyContact", "EmergencyContacts")</li>
+                
+
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
