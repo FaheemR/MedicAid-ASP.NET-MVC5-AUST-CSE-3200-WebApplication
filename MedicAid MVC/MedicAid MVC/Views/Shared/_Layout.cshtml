@@ -3,7 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="keywords" content="austcse . medicaid, sd-v" />
+    <meta name="project-name" content="medicaid" />
+    <meta name="author" content="Sayef Reyadh" />
+    <meta name="author" content="Asif Imtiaz Shaafi" />
+    <meta name="author" content="Farzana Eva" />
+    
+    
+    <title>@ViewBag.Title - MedicAid</title>
+    
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -22,8 +31,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Doctor's Info", "Search", "Doctor")</li>
+                    <li>@Html.ActionLink("Hospital's Info", "Search", "Hospital")</li>
+                    <li>@Html.ActionLink("Pharmacy's Info", "Search", "Pharmacy")</li>
+                    <li>@Html.ActionLink("Emergency Contacts", "Search", "Emergency")</li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -33,7 +45,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - MedicAid</p>
         </footer>
     </div>
 
