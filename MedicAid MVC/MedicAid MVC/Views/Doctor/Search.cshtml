@@ -1,7 +1,4 @@
-﻿@model MedicAid_MVC.ViewModels.DoctorViewModel
-@{
-    ViewBag.Title = "Search";
-}
+﻿@model IEnumerable<MedicAid_MVC.Models.DoctorModel>
 
 <body>
 
@@ -23,7 +20,7 @@
                             <th><input type="text" class="form-control" placeholder="Location"></th>
                         </tr>
                     </thead>
-                    @foreach (var doctor in Model.Doctors)
+                    @foreach (var doctor in Model)
                     {
                         <tbody>
                             <tr>
