@@ -234,6 +234,22 @@
     <Compile Include="Migrations\201801201422472_TestDatabase.Designer.cs">
       <DependentUpon>201801201422472_TestDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801201723178_DoctorModelInsertData.cs" />
+    <Compile Include="Migrations\201801201723178_DoctorModelInsertData.Designer.cs">
+      <DependentUpon>201801201723178_DoctorModelInsertData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201732051_HospitalModelInsertData.cs" />
+    <Compile Include="Migrations\201801201732051_HospitalModelInsertData.Designer.cs">
+      <DependentUpon>201801201732051_HospitalModelInsertData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201750255_PharmacyModelInsertData.cs" />
+    <Compile Include="Migrations\201801201750255_PharmacyModelInsertData.Designer.cs">
+      <DependentUpon>201801201750255_PharmacyModelInsertData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201753027_EmergencyModelInsertData.cs" />
+    <Compile Include="Migrations\201801201753027_EmergencyModelInsertData.Designer.cs">
+      <DependentUpon>201801201753027_EmergencyModelInsertData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
     <Compile Include="Models\Authentication\IdentityModels.cs" />
@@ -327,6 +343,10 @@
     <Content Include="Views\Appointment\CreateAppointment.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Doctor\Create.cshtml" />
+    <Content Include="Views\Hospital\Create.cshtml" />
+    <Content Include="Views\Emergency\Create.cshtml" />
+    <Content Include="Views\Pharmacy\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -362,6 +382,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801201422472_TestDatabase.resx">
       <DependentUpon>201801201422472_TestDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201723178_DoctorModelInsertData.resx">
+      <DependentUpon>201801201723178_DoctorModelInsertData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201732051_HospitalModelInsertData.resx">
+      <DependentUpon>201801201732051_HospitalModelInsertData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201750255_PharmacyModelInsertData.resx">
+      <DependentUpon>201801201750255_PharmacyModelInsertData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201753027_EmergencyModelInsertData.resx">
+      <DependentUpon>201801201753027_EmergencyModelInsertData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

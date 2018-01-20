@@ -9,6 +9,16 @@
 
     <div class="container">
         <div class="row">
+            
+
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Hospital")
+                    </li>
+
+                </ul>
+            </div>
             <div class="panel panel-success filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Hospital's Information</h3>
@@ -26,14 +36,14 @@
                     </thead>
                     <tbody>
                         @foreach (var hospital in Model)
-                        {
-                            <tr>
-                                <td>@hospital.Name</td>
-                                <td>@hospital.Location</td>
-                                <td>@hospital.ClosingDay</td>
-                                <td>@hospital.Contact</td>
-                            </tr>
-                        }
+                {
+                    <tr>
+                        <td>@hospital.Name</td>
+                        <td>@hospital.Location</td>
+                        <td>@hospital.ClosingDay</td>
+                        <td>@hospital.Contact</td>
+                    </tr>
+        }
 
                     </tbody>
                 </table>

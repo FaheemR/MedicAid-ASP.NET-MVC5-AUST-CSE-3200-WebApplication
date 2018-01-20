@@ -12,6 +12,15 @@
 
     <div class="container">
         <div class="row">
+            
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Emergency")
+                    </li>
+
+                </ul>
+            </div>
             <div class="panel panel-danger filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Emergency Contacts</h3>
@@ -29,15 +38,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach (var emergency in Model)
-                    {
-                        <tr>
-                            <td>@emergency.Name</td>
-                            <td>@emergency.Type</td>
-                            <td>@emergency.Location</td>
-                            <td>@emergency.Contact</td>
-                        </tr>
-                    }
+                        @foreach (var emergency in Model)
+                {
+                    <tr>
+                        <td>@emergency.Name</td>
+                        <td>@emergency.Type</td>
+                        <td>@emergency.Location</td>
+                        <td>@emergency.Contact</td>
+                    </tr>
+        }
                     </tbody>
                 </table>
             </div>

@@ -6,8 +6,19 @@
 
 <body background=@Url.Content("~/Content/image/pharma.jpg")>
 
+
+
     <div class="container">
         <div class="row">
+            
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Pharmacy")
+                    </li>
+
+                </ul>
+            </div>
             <div class="panel panel-warning filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Pharmacy's Information</h3>
@@ -24,14 +35,14 @@
                     </thead>
                     <tbody>
                         @foreach (var pharmacy in Model)
-                        {
-                            <tr>
-                                <td>@pharmacy.Name</td>
-                                <td>@pharmacy.Location</td>
-                                <td>@pharmacy.ClosingDay</td>
-                                <td>@pharmacy.Contact</td>
-                            </tr>
-                        }
+                {
+                    <tr>
+                        <td>@pharmacy.Name</td>
+                        <td>@pharmacy.Location</td>
+                        <td>@pharmacy.ClosingDay</td>
+                        <td>@pharmacy.Contact</td>
+                    </tr>
+        }
 
                     </tbody>
                 </table>

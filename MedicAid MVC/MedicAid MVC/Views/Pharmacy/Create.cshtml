@@ -1,9 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "CreateAppointment";
-}
-
-<body background=@Url.Content("~/Content/image/medicalwallpapers2.jpg")>
+﻿<body background=@Url.Content("~/Content/image/emergency2.jpg")>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -22,26 +17,30 @@
                             </div>
                             <div class="form-group">
 
-                                <label for="exampleInputDoctor">
-                                    Doctor's Name
+                                <label for="exampleInputLocation">
+                                    Location
                                 </label>
-                                <input class="form-control" id="exampleInputDoctor" type="password" />
+                                <input class="form-control" id="exampleInputLocation" type="password" />
                             </div>
 
                             <div class="form-group">
 
-                                <label for="exampleInputDate">
-                                    Date & Time
+                                <label for="exampleInputClosing">
+                                    Closing Day
                                 </label>
-                                <input class="form-control" id="exampleInputDate" type="password" />
+                                <input class="form-control" id="exampleInputClosing" type="password" />
                             </div>
 
-                            @*<div class="checkbox">
+                            <div class="form-group">
 
-                                <label>
-                                    <input type="checkbox" /> Check me out
+                                <label for="exampleInputHospitalContact">
+                                    Contact
                                 </label>
-                            </div>*@
+                                <input class="form-control" id="exampleInputHospitalContact" type="password" />
+                            </div>
+
+
+
                             <button type="submit" class="btn btn-default">
                                 Create
                             </button>
@@ -56,3 +55,5 @@
     </div>
 
 </body>
+
+

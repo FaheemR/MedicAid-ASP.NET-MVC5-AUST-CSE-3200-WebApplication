@@ -8,6 +8,15 @@
 
     <div class="container">
         <div class="row">
+
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Doctor")
+                    </li>
+
+                </ul>
+            </div>
             <div class="panel panel-primary filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Doctor's Information</h3>
@@ -21,7 +30,6 @@
                             <th><input type="text" class="form-control" placeholder="Name"></th>
                             <th><input type="text" class="form-control" placeholder="Specialist"></th>
                             <th><input type="text" class="form-control" placeholder="Hospital's Name"></th>
-                            <th><input type="text" class="form-control" placeholder="Location"></th>
                         </tr>
                     </thead>
                     @foreach (var doctor in Model)

@@ -43,5 +43,10 @@ namespace MedicAid_MVC.Controllers
 
             return View(doctors);
         }
+
+        public ActionResult Create()
+        {
+           return View();
+        }
     }
 }
