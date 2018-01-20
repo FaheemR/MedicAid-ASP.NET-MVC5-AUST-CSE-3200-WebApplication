@@ -251,7 +251,12 @@
     <Content Include="Content\bootstrap-cerulean.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\custom\table.css" />
+    <Content Include="Content\custom\customstyle.css" />
+    <Content Include="Content\image\doctor.jpg" />
+    <Content Include="Content\image\doctor2.jpg" />
+    <Content Include="Content\image\emergency.jpg" />
+    <Content Include="Content\image\hospital.jpg" />
+    <Content Include="Content\image\pharmacy.jpg" />
     <Content Include="Content\video\patient.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -313,6 +318,8 @@
     <Content Include="Views\Hospital\Search.cshtml" />
     <Content Include="Views\Pharmacy\Search.cshtml" />
     <Content Include="Views\Appointment\CreateAppointment.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

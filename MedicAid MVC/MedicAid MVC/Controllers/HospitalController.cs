@@ -25,7 +25,7 @@ namespace MedicAid_MVC.Controllers
         {
 
             var hospitals = _context.Hospitals.ToList();
-            return View();
+            return View(hospitals);
         }
     }
 }

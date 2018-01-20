@@ -25,7 +25,7 @@ namespace MedicAid_MVC.Controllers
         {
 
             var pharmacy = _context.Pharmacy.ToList();
-            return View();
+            return View(pharmacy);
         }
     }
 }

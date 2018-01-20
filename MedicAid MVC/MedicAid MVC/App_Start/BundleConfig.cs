@@ -26,7 +26,7 @@ namespace MedicAid_MVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-cerulean.css",
-                      "~/Content/custom/table.css",
+                      "~/Content/custom/customstyle.css",
                       "~/Content/site.css"));
         }
     }

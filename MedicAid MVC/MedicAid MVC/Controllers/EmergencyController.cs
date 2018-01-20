@@ -25,7 +25,7 @@ namespace MedicAid_MVC.Controllers
         {
 
             var emergency = _context.Emergency.ToList();
-            return View();
+            return View(emergency);
         }
     }
 }
