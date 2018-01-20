@@ -21,6 +21,10 @@ namespace MedicAid_MVC.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<DoctorModel> Doctors { get; set; }
+        public DbSet<HospitalModel> Hospitals { get; set; }
+        public DbSet<PharmacyModel> Pharmacy { get; set; }
+        public DbSet<EmergencyModel> Emergency { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

@@ -218,6 +218,18 @@
     <Compile Include="Migrations\201801201348021_DoctorModelDatabase.Designer.cs">
       <DependentUpon>201801201348021_DoctorModelDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801201411363_HospitalModelDatabase.cs" />
+    <Compile Include="Migrations\201801201411363_HospitalModelDatabase.Designer.cs">
+      <DependentUpon>201801201411363_HospitalModelDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201412568_PharmacyModelDatabase.cs" />
+    <Compile Include="Migrations\201801201412568_PharmacyModelDatabase.Designer.cs">
+      <DependentUpon>201801201412568_PharmacyModelDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201413433_EmergencyModelDatabase.cs" />
+    <Compile Include="Migrations\201801201413433_EmergencyModelDatabase.Designer.cs">
+      <DependentUpon>201801201413433_EmergencyModelDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
     <Compile Include="Models\Authentication\IdentityModels.cs" />
@@ -319,6 +331,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801201348021_DoctorModelDatabase.resx">
       <DependentUpon>201801201348021_DoctorModelDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201411363_HospitalModelDatabase.resx">
+      <DependentUpon>201801201411363_HospitalModelDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201412568_PharmacyModelDatabase.resx">
+      <DependentUpon>201801201412568_PharmacyModelDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201413433_EmergencyModelDatabase.resx">
+      <DependentUpon>201801201413433_EmergencyModelDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
