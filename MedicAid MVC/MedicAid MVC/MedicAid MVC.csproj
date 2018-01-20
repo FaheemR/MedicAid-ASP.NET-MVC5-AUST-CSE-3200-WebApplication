@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201801171620497_InitialCreate.Designer.cs">
       <DependentUpon>201801171620497_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801201348021_DoctorModelDatabase.cs" />
+    <Compile Include="Migrations\201801201348021_DoctorModelDatabase.Designer.cs">
+      <DependentUpon>201801201348021_DoctorModelDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
     <Compile Include="Models\Authentication\IdentityModels.cs" />
@@ -312,6 +316,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801171620497_InitialCreate.resx">
       <DependentUpon>201801171620497_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201348021_DoctorModelDatabase.resx">
+      <DependentUpon>201801201348021_DoctorModelDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
