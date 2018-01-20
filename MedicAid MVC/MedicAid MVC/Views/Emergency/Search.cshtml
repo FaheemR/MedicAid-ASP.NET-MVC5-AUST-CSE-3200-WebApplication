@@ -1,63 +1,67 @@
-﻿
+﻿@model IEnumerable<MedicAid_MVC.Models.EmergencyModel>
+
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "Emergency Contracts Search";
 }
 
 
 @Styles.Render("~/Content/custom/table.css")
 @Scripts.Render("~/Scripts/custom/table.js")
 <body>
-    
 
-<div class="container">
-    <div class="row">
-        <div class="panel panel-danger filterable">
-            <div class="panel-heading">
-                <h3 class="panel-title">Emergency Contacts</h3>
-                <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-danger filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Emergency Contacts</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    </div>
                 </div>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr class="filters">
+                            <th><input type="text" class="form-control" placeholder="Name"></th>
+                            <th><input type="text" class="form-control" placeholder="Type"></th>
+                            <th><input type="text" class="form-control" placeholder="Location"></th>
+                            <th><input type="text" class="form-control" placeholder="Contact"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var emergency in Model)
+                    {
+                        <tr>
+                            <td>@emergency.Name</td>
+                            <td>@emergency.Type</td>
+                            <td>@emergency.Location</td>
+                            <td>@emergency.Contact</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
             </div>
-            <table class="table table-hover table-striped">
-                <thead>
-                <tr class="filters">
-                    <th><input type="text" class="form-control" placeholder="Name"></th>
-                    <th><input type="text" class="form-control" placeholder="Type"></th>
-                    <th><input type="text" class="form-control" placeholder="Location"></th>
-                    <th><input type="text" class="form-control" placeholder="Contact"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Rampura Thana</td>
-                    <td>Police Station</td>
-                    <td>Dhaka</td>
-                    <td>01646203485</td>
-                </tr>
-                </tbody>
-            </table>
         </div>
     </div>
-</div>
 
 
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="pagination">
-                <li>
-                    <a href="#">Prev</a>
-                </li>
-                <li>
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">Next</a>
-                </li>
-            </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">Prev</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 </body>
 

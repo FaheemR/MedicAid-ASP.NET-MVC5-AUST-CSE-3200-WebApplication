@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<MedicAid_MVC.Models.DoctorModel>
 
+@{
+    ViewBag.Title = "Doctor Search";
+}
+
 <body>
 
     <div class="container">
@@ -32,7 +36,7 @@
                                 {
                                     <td>Available</td>
                                 }
-                                @if(!doctor.IsAvailable)
+                                @if (!doctor.IsAvailable)
                                 {
                                     <td>Not Available</td>
                                 }
