@@ -1,4 +1,4 @@
-﻿
+﻿@model MedicAid_MVC.ViewModels.DoctorViewModel
 @{
     ViewBag.Title = "Search";
 }
@@ -23,14 +23,25 @@
                             <th><input type="text" class="form-control" placeholder="Location"></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dr. Habibur Rahman</td>
-                            <td>CardioSpecialists</td>
-                            <td>Labaid</td>n
-                            <td>01676489632</td>
-                        </tr>
-                    </tbody>
+                    @foreach (var doctor in Model.Doctors)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@doctor.Name</td>
+                                <td>@doctor.Specialist</td>
+                                <td>@doctor.HospitalName</td>
+                                <td>@doctor.Contact</td>
+                                @if (doctor.IsAvailable)
+                                {
+                                    <td>Available</td>
+                                }
+                                @if(!doctor.IsAvailable)
+                                {
+                                    <td>Not Available</td>
+                                }
+                            </tr>
+                        </tbody>
+                    }
                 </table>
             </div>
         </div>
