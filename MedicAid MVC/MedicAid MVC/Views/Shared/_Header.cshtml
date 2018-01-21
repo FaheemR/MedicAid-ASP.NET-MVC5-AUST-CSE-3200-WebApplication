@@ -1,4 +1,6 @@
-﻿<div class="container body-content">
+﻿@using MedicAid_MVC.Utilities
+
+<div class="container body-content">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -14,10 +16,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Doctor's Info", "Search", "Doctor")</li>
-                    <li>@Html.ActionLink("Hospital's Info", "Search", "Hospital")</li>
-                    <li>@Html.ActionLink("Pharmacy's Info", "Search", "Pharmacy")</li>
-                    <li>@Html.ActionLink("Emergency Contacts", "Search", "Emergency")</li>
+                    <li class="@Html.IsActive("Home", "Index")">
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="@Html.IsActive("Doctor", "Search")">
+                        @Html.ActionLink("Doctor's Info", "Search", "Doctor")
+                    </li>
+                    <li class="@Html.IsActive("Hospital", "Search")">
+                        @Html.ActionLink("Hospital's Info", "Search", "Hospital")
+                    </li>
+                    <li class="@Html.IsActive("Pharmacy", "Search")">
+                        @Html.ActionLink("Pharmacy's Info", "Search", "Pharmacy")
+                    </li>
+                    <li class="@Html.IsActive("Emergency", "Search")">
+                        @Html.ActionLink("Emergency Contacts", "Search", "Emergency")
+                    </li>
 
                 </ul>
                 @Html.Partial("_LoginPartial")
