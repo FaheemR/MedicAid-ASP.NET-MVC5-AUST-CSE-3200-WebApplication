@@ -13,7 +13,7 @@ namespace MedicAid_MVC.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult NearByHospital()
         {
             ViewBag.Message = "Your application description page.";
 
