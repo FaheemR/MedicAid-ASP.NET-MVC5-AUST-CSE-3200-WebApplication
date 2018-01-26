@@ -5,18 +5,33 @@ var infowindow;
 function initMap() {
 
     var pyrmont = { lat: 23.763831, lng: 90.406886 };
-
     map = new google.maps.Map(document.getElementById('map'), {
         center: pyrmont,
         zoom: 15
     });
 
     infowindow = new google.maps.InfoWindow();
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(pos.latitude + ',' + pos.longitude);
+            infoWindow.open(map);
+            map.setCenter(pos);
+        });
+    } 
+
+
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: pyrmont,
         radius: 500,
-        type: ['hospital', 'pharmacy']
+        type: ['hospital']
     }, callback);
 }
 

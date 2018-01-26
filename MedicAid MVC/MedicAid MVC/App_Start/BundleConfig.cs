@@ -22,8 +22,7 @@ namespace MedicAid_MVC
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/custom/table.js",
-                      "~/Scripts/custom/map-hospital.js",
-                      "~/Scripts/custom/map-pharmacy.js",
+                      "~/Scripts/custom/map-nearby.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css/appcss").Include(
