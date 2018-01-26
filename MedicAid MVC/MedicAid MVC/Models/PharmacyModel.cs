@@ -9,13 +9,15 @@ namespace MedicAid_MVC.Models
     public class PharmacyModel
     {
         public int Id { get; set; }
+
         [Required]
         [StringLength(50)]
         [Display(Name = "Pharmacy Name")]
         public String Name { get; set; }
+
         public String Location { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(20)]
         [Display(Name = "Day of Closing")]
         public String ClosingDay { get; set; }
@@ -26,4 +28,5 @@ namespace MedicAid_MVC.Models
         [Display(Name = "Contact")]
         public String Contact { get; set; }
     }
+
 }

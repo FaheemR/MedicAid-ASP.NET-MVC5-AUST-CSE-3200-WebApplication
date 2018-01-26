@@ -31,5 +31,13 @@ namespace MedicAid_MVC.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Save(PharmacyModel pharmacyModel)
+        {
+            _context.Pharmacy.Add(pharmacyModel);
+            _context.SaveChanges();
+            return RedirectToAction("Search", "Pharmacy");
+        }
     }
 }

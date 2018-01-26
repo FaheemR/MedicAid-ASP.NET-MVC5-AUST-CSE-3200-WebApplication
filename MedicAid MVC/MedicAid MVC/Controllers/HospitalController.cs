@@ -27,9 +27,19 @@ namespace MedicAid_MVC.Controllers
             var hospitals = _context.Hospitals.ToList();
             return View(hospitals);
         }
+
+
         public ActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Save(HospitalModel hospitalModel)
+        {
+            _context.Hospitals.Add(hospitalModel);
+            _context.SaveChanges();
+            return RedirectToAction("Search", "Hospital");
         }
     }
 }

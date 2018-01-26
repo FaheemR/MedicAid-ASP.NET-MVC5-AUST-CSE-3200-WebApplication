@@ -48,5 +48,13 @@ namespace MedicAid_MVC.Controllers
         {
            return View();
         }
+
+        [HttpPost]
+        public ActionResult Save(DoctorModel doctorModel)
+        {
+            _context.Doctors.Add(doctorModel);
+            _context.SaveChanges();
+            return RedirectToAction("Search", "Doctor");
+        }
     }
 }
