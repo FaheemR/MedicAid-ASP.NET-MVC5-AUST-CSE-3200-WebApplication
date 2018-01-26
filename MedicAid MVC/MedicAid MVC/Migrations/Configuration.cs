@@ -10,7 +10,6 @@ namespace MedicAid_MVC.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MedicAid_MVC.Models.ApplicationDbContext";
         }
 
         protected override void Seed(MedicAid_MVC.Models.ApplicationDbContext context)

@@ -24,9 +24,7 @@ namespace MedicAid_MVC.Models
         public DbSet<HospitalModel> Hospitals { get; set; }
         public DbSet<PharmacyModel> Pharmacy { get; set; }
         public DbSet<EmergencyModel> Emergency { get; set; }
-
-        public DbSet<TestModel> Test { get; set; }
-
+ 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
