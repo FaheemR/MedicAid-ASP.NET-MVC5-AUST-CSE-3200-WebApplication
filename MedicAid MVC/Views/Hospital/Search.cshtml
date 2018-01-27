@@ -1,0 +1,97 @@
+﻿@model IEnumerable<MedicAid_MVC.Models.HospitalModel>
+
+@{
+    ViewBag.Title = "Hospital Search";
+}
+
+
+<body background=@Url.Content("~/Content/image/medicalwallpapers.jpg")>
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Hospital")
+                    </li>
+
+                </ul>
+            </div>
+            <div class="panel panel-success filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Hospital's Information</h3>
+                </div>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        @using (Html.BeginForm("Search", "Hospital"))
+                        {
+
+                            <tr class="filters">
+                                <th><input type="text" class="form-control" placeholder="Hospital's Name" name="nameFilter" value="@ViewBag.nameFilter"></th>
+                                <th><input type="text" class="form-control" placeholder="Location" name="locationFilter" value="@ViewBag.locationFilter"></th>
+                                <th>
+                                    <div class="pull-right">
+                                        <button class="btn btn-success btn-xs btn-filter" style="padding: 14%; margin-bottom: 8%; width: 120%;">
+                                            <span class="glyphicon glyphicon-filter"></span> Filter
+                                        </button>
+                                    </div>
+                                </th>
+
+                                <th>
+                                    <div>
+                                        <span>&emsp;</span>
+                                    </div>
+                                </th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @foreach (var hospital in Model)
+                        {
+                            <tr>
+                                <td>@hospital.Name</td>
+                                <td>@hospital.Location</td>
+                                <td>@hospital.ClosingDay</td>
+                                <td>@hospital.Contact</td>
+                            </tr>
+                        }
+
+                        @if (Model.ToList().Count() == 0)
+                        {
+                            <tr>
+                                <td>
+                                    <div style="padding: 5%;">
+                                        <h4>Sorry,  No Hospital Found!</h4>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">Prev</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

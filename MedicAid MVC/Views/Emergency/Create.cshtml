@@ -1,0 +1,58 @@
+﻿@model MedicAid_MVC.Models.EmergencyModel
+
+<h2>New Emergency Contact</h2>
+
+@using (Html.BeginForm("Save", "Emergency"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Location)
+        @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Type)
+        @*@Html.TextBoxFor(m => m.ClosingDay, new { @class = "form-control" })*@
+        @{
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            listItems.Add(new SelectListItem
+            {
+                Text = "Ambulance",
+                Value = "Ambulance",
+                Selected = true
+
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Police Station",
+                Value = "Police Station",
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Fire Service",
+                Value = "Fire Service"
+            });
+            listItems.Add(new SelectListItem
+            {
+                Text = "Blood Bank",
+                Value = "Blood Bank"
+            });
+        }
+
+
+        @Html.DropDownListFor(m => m.Type, listItems, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Contact)
+        @Html.TextBoxFor(m => m.Contact, new { @class = "form-control" })
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}

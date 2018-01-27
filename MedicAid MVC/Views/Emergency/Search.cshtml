@@ -1,0 +1,113 @@
+﻿@model IEnumerable<MedicAid_MVC.Models.EmergencyModel>
+
+@{
+    ViewBag.Title = "Emergency Contracts Search";
+}
+
+
+@Styles.Render("~/Content/custom/table.css")
+@Scripts.Render("~/Scripts/custom/table.js")
+<body background=@Url.Content("~/Content/image/emergency2.jpg")>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Create", "Create", "Emergency")
+                    </li>
+
+                </ul>
+            </div>
+            <div class="panel panel-danger filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Emergency Contacts</h3>
+
+                </div>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        @using (Html.BeginForm("Search", "Emergency"))
+                        {
+                        <tr class="filters">
+
+                            <input type="hidden" name="getOnlyTypes" value="false" />
+                            <th><input type="text" class="form-control" placeholder="Name" name="nameFilter" value="@ViewBag.nameFilter"></th>
+                            <th><input type="text" class="form-control" placeholder="Location" name="locationFilter" value="@ViewBag.locationFilter"></th>
+                            <th>
+                                <div class="pull-right">
+                                    <button class="btn btn-danger btn-xs btn-filter" style="padding: 14%; margin-bottom: 8%; width: 120%;">
+                                        <span class="glyphicon glyphicon-filter"></span> Filter
+                                    </button>
+                                </div>
+                            </th>
+
+                            <th>
+                                <div>
+                                    <span>&emsp;</span>
+                                </div>
+                            </th>
+                        </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @foreach (var emergency in Model)
+                        {
+                            <tr>
+                                <td>@emergency.Name</td>
+                                <td>@emergency.Type</td>
+                                <td>@emergency.Location</td>
+                                <td>@emergency.Contact</td>
+                            </tr>
+                        }
+
+                        @if (Model.ToList().Count() == 0)
+                        {
+                            <tr>
+                                <td>
+                                    <div style="padding: 5%;">
+                                        <h4>Sorry,  No Emergency Contact Found!</h4>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    @if (ViewBag.emergencyTypes != null && ViewBag.emergencyTypeCount != null)
+    {
+        <div style="background: #000">
+            @foreach (var em in ViewBag.emergencyTypes)
+            {
+                <h4>@em</h4>
+            }
+
+            <h5>Total types: @ViewBag.emergencyTypeCount</h5>
+        </div>
+    }
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">Prev</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+

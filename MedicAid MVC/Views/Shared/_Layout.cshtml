@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="austcse . medicaid, sd-v" />
+    <meta name="project-name" content="medicaid" />
+    <meta name="author" content="Sayef Reyadh" />
+    <meta name="author" content="Asif Imtiaz Shaafi" />
+    <meta name="author" content="Farzana Eva" />
+
+
+    <title>@ViewBag.Title MedicAid</title>
+
+
+    @Styles.Render("~/Content/css/appcss")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+<body>
+
+    @Html.Partial("_Header")
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Html.Partial("_Footer")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
