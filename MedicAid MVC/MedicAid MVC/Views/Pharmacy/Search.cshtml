@@ -1,56 +1,75 @@
 ﻿@model IEnumerable<MedicAid_MVC.Models.PharmacyModel>
-
 @{
     ViewBag.Title = "Pharmacy Search";
 }
-
 <body background=@Url.Content("~/Content/image/pharma.jpg")>
-
-
 
     <div class="container">
         <div class="row">
-            
             <div class="navbar">
                 <ul class="nav navbar-nav">
                     <li>
                         @Html.ActionLink("Create", "Create", "Pharmacy")
                     </li>
-
                 </ul>
             </div>
             <div class="panel panel-warning filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Pharmacy's Information</h3>
-                    <div class="pull-right">
-                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                    </div>
                 </div>
                 <table class="table table-hover table-striped">
                     <thead>
-                        <tr class="filters">
-                            <th><input type="text" class="form-control" placeholder="Pharmacy's Name'"></th>
-                            <th><input type="text" class="form-control" placeholder="Location"></th>
-                        </tr>
+                        @using (Html.BeginForm("Search", "Pharmacy"))
+                        {
+
+                            <tr class="filters">
+                                <th>
+                                    <label>
+                                        <input type="text" class="form-control" placeholder="Name" name="nameFilter" value="@ViewBag.nameFilter">
+                                    </label>
+                                </th>
+                                <th><input type="text" class="form-control" placeholder="Location" name="locationFilter" value="@ViewBag.locationFilter"></th>
+                                <th>
+                                    <div class="pull-right">
+                                        <button class="btn btn-warning btn-xs btn-filter" style="padding: 14%; margin-bottom: 8%; width: 120%;">
+                                            <span class="glyphicon glyphicon-filter"></span> Filter
+                                        </button>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <span>&emsp;</span>
+                                    </div>
+                                </th>
+                            </tr>
+                        }
                     </thead>
                     <tbody>
                         @foreach (var pharmacy in Model)
-                {
-                    <tr>
-                        <td>@pharmacy.Name</td>
-                        <td>@pharmacy.Location</td>
-                        <td>@pharmacy.ClosingDay</td>
-                        <td>@pharmacy.Contact</td>
-                    </tr>
-        }
+                        {
+                            <tr>
+                                <td>@pharmacy.Name</td>
+                                <td>@pharmacy.Location</td>
+                                <td>@pharmacy.ClosingDay</td>
+                                <td>@pharmacy.Contact</td>
+                            </tr>
+                        }
 
+                        @if (Model.ToList().Count() == 0)
+                        {
+                            <tr>
+                                <td>
+                                    <div style="padding: 5%;">
+                                        <h4>Sorry,  No Pharmacy Found!</h4>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-
 
     <div class="container-fluid">
         <div class="row">

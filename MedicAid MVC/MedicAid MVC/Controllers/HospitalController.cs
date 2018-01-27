@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MedicAid_MVC.Models;
 
@@ -21,11 +20,26 @@ namespace MedicAid_MVC.Controllers
             _context.Dispose();
         }
         // GET: Hospital
-        public ActionResult Search()
+        public ActionResult Search(string nameFilter = "", string locationFilter = "")
         {
 
-            var hospitals = _context.Hospitals.ToList();
-            return View(hospitals);
+            var hospitals = from hospital in _context.Hospitals select hospital;
+
+
+            if (!string.IsNullOrEmpty(nameFilter))
+            {
+                hospitals = hospitals.Where(p => p.Name.Contains(nameFilter));
+            }
+
+            if (!string.IsNullOrEmpty(locationFilter))
+            {
+                hospitals = hospitals.Where(p => p.Location.Contains(locationFilter));
+            }
+
+            ViewBag.nameFilter = nameFilter;
+            ViewBag.locationFilter = locationFilter;
+
+            return View(hospitals.ToList());
         }
 
 

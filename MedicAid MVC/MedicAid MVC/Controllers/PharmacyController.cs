@@ -21,11 +21,25 @@ namespace MedicAid_MVC.Controllers
             _context.Dispose();
         }
         // GET: Pharmacy
-        public ActionResult Search()
+        public ActionResult Search(string nameFilter = "", string locationFilter = "")
         {
 
-            var pharmacy = _context.Pharmacy.ToList();
-            return View(pharmacy);
+            var pharmacies = from pharmacy in _context.Pharmacy select pharmacy;
+
+            if (!string.IsNullOrEmpty(nameFilter))
+            {
+                pharmacies = pharmacies.Where(p => p.Name.Contains(nameFilter));
+            }
+
+            if (!string.IsNullOrEmpty(locationFilter))
+            {
+                pharmacies = pharmacies.Where(p => p.Location.Contains(locationFilter));
+            }
+
+            ViewBag.nameFilter = nameFilter;
+            ViewBag.locationFilter = locationFilter;
+
+            return View(pharmacies.ToList());
         }
         public ActionResult Create()
         {
