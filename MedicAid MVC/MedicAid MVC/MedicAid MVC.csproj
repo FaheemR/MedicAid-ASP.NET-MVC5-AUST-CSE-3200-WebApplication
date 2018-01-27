@@ -218,6 +218,14 @@
     <Compile Include="Migrations\201801261627239_insertData.Designer.cs">
       <DependentUpon>201801261627239_insertData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801271951159_changes.cs" />
+    <Compile Include="Migrations\201801271951159_changes.Designer.cs">
+      <DependentUpon>201801271951159_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801272005146_seedUsers.cs" />
+    <Compile Include="Migrations\201801272005146_seedUsers.Designer.cs">
+      <DependentUpon>201801272005146_seedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
     <Compile Include="Models\Authentication\IdentityModels.cs" />
@@ -340,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801261627239_insertData.resx">
       <DependentUpon>201801261627239_insertData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801271951159_changes.resx">
+      <DependentUpon>201801271951159_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801272005146_seedUsers.resx">
+      <DependentUpon>201801272005146_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
