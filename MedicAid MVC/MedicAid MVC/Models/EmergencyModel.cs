@@ -15,7 +15,13 @@ namespace MedicAid_MVC.Models
         [Display(Name = "Name")]
         public String Name { get; set; }
 
+
+        [Required]
+        [StringLength(20)]
         public String Type { get; set; }
+
+        [Required]
+        [StringLength(20)]
         public String Location { get; set; }
 
         [Required]

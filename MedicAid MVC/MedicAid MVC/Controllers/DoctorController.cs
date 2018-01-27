@@ -69,10 +69,17 @@ namespace MedicAid_MVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(DoctorModel doctorModel)
         {
             if (Request.IsAuthenticated)
             {
+                if (!ModelState.IsValid)
+                {
+                    var viewModel = new DoctorModel();
+                    viewModel = doctorModel;
+                    return View("Create", viewModel);
+                }
                 _context.Doctors.Add(doctorModel);
                 _context.SaveChanges();
                 return RedirectToAction("Search", "Doctor");

@@ -49,8 +49,15 @@ namespace MedicAid_MVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(HospitalModel hospitalModel)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new HospitalModel();
+                viewModel = hospitalModel;
+                return View("Create", viewModel);
+            }
             _context.Hospitals.Add(hospitalModel);
             _context.SaveChanges();
             return RedirectToAction("Search", "Hospital");

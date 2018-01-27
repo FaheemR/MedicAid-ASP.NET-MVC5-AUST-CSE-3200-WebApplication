@@ -72,8 +72,15 @@ namespace MedicAid_MVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(EmergencyModel emergencyModel)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new EmergencyModel();
+                viewModel = emergencyModel;
+                return View("Create", viewModel);
+            }
             _context.Emergency.Add(emergencyModel);
             _context.SaveChanges();
             return RedirectToAction("Search", "Emergency");

@@ -47,8 +47,16 @@ namespace MedicAid_MVC.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(PharmacyModel pharmacyModel)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new PharmacyModel();
+                viewModel = pharmacyModel;
+                return View("Create", viewModel);
+            }
+
             _context.Pharmacy.Add(pharmacyModel);
             _context.SaveChanges();
             return RedirectToAction("Search", "Pharmacy");
