@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MedicAid_MVC.Models.PharmacyModel>
+﻿@using MedicAid_MVC.Models
+@model IEnumerable<MedicAid_MVC.Models.PharmacyModel>
 @{
     ViewBag.Title = "Pharmacy Search";
 }
@@ -6,13 +7,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        @Html.ActionLink("Create", "Create", "Pharmacy")
-                    </li>
-                </ul>
-            </div>
+            @if (User.IsInRole(RoleName.Admin))
+            {
+
+                <button class="btn btn-primary btn-lg btn-filter">
+                    @Html.ActionLink("Create", "Create", "Pharmacy")
+                </button>
+            }
+            <section style="height:10px;"></section>
             <div class="panel panel-warning filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Pharmacy's Information</h3>

@@ -56,6 +56,7 @@ namespace MedicAid_MVC.Controllers
             return View(doctors.ToList());
         }
 
+        [Authorize(Roles = RoleName.Admin)]
         public ActionResult Create()
         {
             if (Request.IsAuthenticated)

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MedicAid_MVC.Models.DoctorModel>
+﻿@using MedicAid_MVC.Models
+@model IEnumerable<MedicAid_MVC.Models.DoctorModel>
 @{
     ViewBag.Title = "Doctor Search";
 }
@@ -6,16 +7,14 @@
 <body background=@Url.Content("~/Content/image/medicalwallpapers2.jpg")>
     <div class="container">
         <div class="row">
-            @if (Request.IsAuthenticated)
+            @if (User.IsInRole(RoleName.Admin))
             {
-                <div class="navbar">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            @Html.ActionLink("Create", "Create", "Doctor")
-                        </li>
-                    </ul>
-                </div>
+
+                <button class="btn btn-primary btn-lg btn-filter">
+                    @Html.ActionLink("Create", "Create", "Doctor")
+                </button>
             }
+            <section style="height:10px;"></section>
             <div class="panel panel-primary filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Doctor's Information</h3>

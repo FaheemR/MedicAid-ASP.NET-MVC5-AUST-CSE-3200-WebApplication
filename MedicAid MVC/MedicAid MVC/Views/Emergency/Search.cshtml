@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MedicAid_MVC.Models.EmergencyModel>
+﻿@using MedicAid_MVC.Models
+@model IEnumerable<MedicAid_MVC.Models.EmergencyModel>
 
 @{
     ViewBag.Title = "Emergency Contracts Search";
@@ -12,14 +13,13 @@
     <div class="container">
         <div class="row">
 
-            <div class="navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        @Html.ActionLink("Create", "Create", "Emergency")
-                    </li>
-
-                </ul>
-            </div>
+            @if (User.IsInRole(RoleName.Admin))
+            {
+                <button class="btn btn-primary btn-lg btn-filter">
+                    @Html.ActionLink("Create", "Create", "Emergency")
+                </button>
+            }
+            <section style="height:10px;"></section>
             <div class="panel panel-danger filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Emergency Contacts</h3>
@@ -52,7 +52,7 @@
                     </thead>
 
 
-                    
+
 
                     @foreach (var emergency in Model)
                     {
@@ -85,13 +85,13 @@
 
 
     @*<div style="background: #000">
-        @foreach (var em in ViewBag.emergencyTypes)
-        {
-            <h4>@em</h4>
-        }
+            @foreach (var em in ViewBag.emergencyTypes)
+            {
+                <h4>@em</h4>
+            }
 
-        <h5>Total types: @ViewBag.emergencyTypeCount</h5>
-    </div>*@
+            <h5>Total types: @ViewBag.emergencyTypeCount</h5>
+        </div>*@
 
 
 

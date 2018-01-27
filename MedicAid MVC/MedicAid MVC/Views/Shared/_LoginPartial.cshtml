@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using MedicAid_MVC.Models
+@using Microsoft.AspNet.Identity
 @using MedicAid_MVC.Utilities
 
 
@@ -9,10 +10,12 @@
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
-            <li class="@Html.IsActive("Appointment", "CreateAppointment")">
-                @Html.ActionLink("Create Appointment", "CreateAppointment", "Appointment")
-            </li>
-
+            @if (!User.IsInRole(RoleName.Admin) && !User.IsInRole(RoleName.Receptionist))
+            {
+                <li class="@Html.IsActive("Appointment", "CreateAppointment")">
+                    @Html.ActionLink("Create Appointment", "CreateAppointment", "Appointment")
+                </li>
+            }
             <li class="@Html.IsActive("Manage", "Index")">
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
