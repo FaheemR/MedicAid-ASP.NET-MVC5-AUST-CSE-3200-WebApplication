@@ -66,9 +66,17 @@ namespace MedicAid_MVC.Controllers
 
         }
 
+        [Authorize(Roles = RoleName.Admin)]
         public ActionResult Create()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         [HttpPost]

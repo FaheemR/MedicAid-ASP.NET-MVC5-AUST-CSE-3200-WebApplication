@@ -50,6 +50,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -218,13 +224,13 @@
     <Compile Include="Migrations\201801261627239_insertData.Designer.cs">
       <DependentUpon>201801261627239_insertData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801271951159_changes.cs" />
-    <Compile Include="Migrations\201801271951159_changes.Designer.cs">
-      <DependentUpon>201801271951159_changes.cs</DependentUpon>
+    <Compile Include="Migrations\201801280727205_changes.cs" />
+    <Compile Include="Migrations\201801280727205_changes.Designer.cs">
+      <DependentUpon>201801280727205_changes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801272005146_seedUsers.cs" />
-    <Compile Include="Migrations\201801272005146_seedUsers.Designer.cs">
-      <DependentUpon>201801272005146_seedUsers.cs</DependentUpon>
+    <Compile Include="Migrations\201801280728563_seedUsers.cs" />
+    <Compile Include="Migrations\201801280728563_seedUsers.Designer.cs">
+      <DependentUpon>201801280728563_seedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Authentication\AccountViewModels.cs" />
@@ -247,6 +253,8 @@
     <Content Include="Content\custom\customstyle.css" />
     <Content Include="Content\custom\mapstyle.css" />
     <Content Include="Content\image\emergency2.jpg" />
+    <Content Include="Content\image\eye.png" />
+    <Content Include="Content\image\heart.png" />
     <Content Include="Content\image\home.jpg" />
     <Content Include="Content\image\maxresdefault.jpg" />
     <Content Include="Content\image\medicalwallpapers.jpg" />
@@ -258,6 +266,7 @@
     <Content Include="Content\image\medi.png" />
     <Content Include="Content\image\pharmacy.jpg" />
     <Content Include="Content\image\pharma.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\video\patient.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -326,6 +335,7 @@
     <Content Include="Views\Emergency\Create.cshtml" />
     <Content Include="Views\Pharmacy\Create.cshtml" />
     <Content Include="Views\Home\NearByHospital.cshtml" />
+    <Content Include="Views\Doctor\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,11 +360,11 @@
     <EmbeddedResource Include="Migrations\201801261627239_insertData.resx">
       <DependentUpon>201801261627239_insertData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801271951159_changes.resx">
-      <DependentUpon>201801271951159_changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801280727205_changes.resx">
+      <DependentUpon>201801280727205_changes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801272005146_seedUsers.resx">
-      <DependentUpon>201801272005146_seedUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801280728563_seedUsers.resx">
+      <DependentUpon>201801280728563_seedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

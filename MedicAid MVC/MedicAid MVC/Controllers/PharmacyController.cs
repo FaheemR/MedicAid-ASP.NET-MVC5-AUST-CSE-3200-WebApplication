@@ -41,9 +41,19 @@ namespace MedicAid_MVC.Controllers
 
             return View(pharmacies.ToList());
         }
+
+
+        [Authorize(Roles = RoleName.Admin)]
         public ActionResult Create()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
 
         [HttpPost]

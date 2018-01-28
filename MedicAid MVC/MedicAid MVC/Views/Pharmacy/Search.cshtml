@@ -1,20 +1,25 @@
-﻿@using MedicAid_MVC.Models
-@model IEnumerable<MedicAid_MVC.Models.PharmacyModel>
+﻿@model IEnumerable<MedicAid_MVC.Models.PharmacyModel>
+@using MedicAid_MVC.Models
+
 @{
     ViewBag.Title = "Pharmacy Search";
 }
+
 <body background=@Url.Content("~/Content/image/pharma.jpg")>
+
+
 
     <div class="container">
         <div class="row">
+
             @if (User.IsInRole(RoleName.Admin))
             {
-
                 <button class="btn btn-primary btn-lg btn-filter">
                     @Html.ActionLink("Create", "Create", "Pharmacy")
                 </button>
             }
             <section style="height:10px;"></section>
+
             <div class="panel panel-warning filterable">
                 <div class="panel-heading">
                     <h3 class="panel-title">Pharmacy's Information</h3>
@@ -38,6 +43,7 @@
                                         </button>
                                     </div>
                                 </th>
+
                                 <th>
                                     <div>
                                         <span>&emsp;</span>
@@ -57,6 +63,7 @@
                             </tr>
                         }
 
+
                         @if (Model.ToList().Count() == 0)
                         {
                             <tr>
@@ -72,6 +79,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div class="container-fluid">
         <div class="row">

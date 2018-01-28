@@ -1,6 +1,5 @@
-﻿@using MedicAid_MVC.Models
-@model IEnumerable<MedicAid_MVC.Models.EmergencyModel>
-
+﻿@model IEnumerable<MedicAid_MVC.Models.EmergencyModel>
+@using MedicAid_MVC.Models
 @{
     ViewBag.Title = "Emergency Contracts Search";
 }
@@ -16,7 +15,7 @@
             @if (User.IsInRole(RoleName.Admin))
             {
                 <button class="btn btn-primary btn-lg btn-filter">
-                    @Html.ActionLink("Create", "Create", "Emergency")
+                    @Html.ActionLink("Create" , "Create" , "Emergency")
                 </button>
             }
             <section style="height:10px;"></section>
@@ -29,10 +28,10 @@
                     <thead>
                         @using (Html.BeginForm("Search", "Emergency"))
                         {
-
                             <tr class="filters">
+
+                                <input type="hidden" name="getOnlyTypes" value="false" />
                                 <th><input type="text" class="form-control" placeholder="Name" name="nameFilter" value="@ViewBag.nameFilter"></th>
-                                <th><input type="text" class="form-control" placeholder="Type" name="typeFilter" value="@ViewBag.typeFilter"></th>
                                 <th><input type="text" class="form-control" placeholder="Location" name="locationFilter" value="@ViewBag.locationFilter"></th>
                                 <th>
                                     <div class="pull-right">
@@ -50,25 +49,19 @@
                             </tr>
                         }
                     </thead>
-
-
-
-
-                    @foreach (var emergency in Model)
-                    {
-                        <tbody>
+                    <tbody>
+                        @foreach (var emergency in Model)
+                        {
                             <tr>
                                 <td>@emergency.Name</td>
                                 <td>@emergency.Type</td>
                                 <td>@emergency.Location</td>
                                 <td>@emergency.Contact</td>
                             </tr>
-                        </tbody>
-                    }
+                        }
 
-                    @if (Model.ToList().Count() == 0)
-                    {
-                        <tbody>
+                        @if (Model.ToList().Count() == 0)
+                        {
                             <tr>
                                 <td>
                                     <div style="padding: 5%;">
@@ -76,22 +69,25 @@
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
-                    }
+                        }
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
 
 
-    @*<div style="background: #000">
+    @if (ViewBag.emergencyTypes != null && ViewBag.emergencyTypeCount != null)
+    {
+        <div style="background: #000">
             @foreach (var em in ViewBag.emergencyTypes)
             {
                 <h4>@em</h4>
             }
 
             <h5>Total types: @ViewBag.emergencyTypeCount</h5>
-        </div>*@
+        </div>
+    }
 
 
 

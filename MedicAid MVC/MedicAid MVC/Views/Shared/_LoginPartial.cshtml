@@ -1,7 +1,6 @@
-﻿@using MedicAid_MVC.Models
-@using Microsoft.AspNet.Identity
+﻿@using Microsoft.AspNet.Identity
 @using MedicAid_MVC.Utilities
-
+@using MedicAid_MVC.Models
 
 @if (Request.IsAuthenticated)
 {
@@ -12,13 +11,15 @@
         <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
             @if (!User.IsInRole(RoleName.Admin) && !User.IsInRole(RoleName.Receptionist))
             {
-                <li class="@Html.IsActive("Appointment", "CreateAppointment")">
-                    @Html.ActionLink("Create Appointment", "CreateAppointment", "Appointment")
+                <li class="@Html.IsActive("Appointment" , "CreateAppointment")">
+                    @Html.ActionLink("Create Appointment", "CreateAppointment" , "Appointment")
                 </li>
             }
+
             <li class="@Html.IsActive("Manage", "Index")">
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
+
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
     }

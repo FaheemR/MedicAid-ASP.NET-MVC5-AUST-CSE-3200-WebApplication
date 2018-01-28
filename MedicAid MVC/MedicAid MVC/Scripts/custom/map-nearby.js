@@ -24,14 +24,14 @@ function initMap() {
             infoWindow.open(map);
             map.setCenter(pos);
         });
-    } 
+    }
 
 
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch({
         location: pyrmont,
         radius: 500,
-        type: ['hospital' , 'pharmacy']
+        type: ['hospital', 'pharmacy']
     }, callback);
 }
 
