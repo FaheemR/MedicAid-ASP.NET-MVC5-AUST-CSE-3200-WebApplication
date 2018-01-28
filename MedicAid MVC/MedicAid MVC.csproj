@@ -244,6 +244,8 @@
     <Content Include="Content\custom\customstyle.css" />
     <Content Include="Content\custom\mapstyle.css" />
     <Content Include="Content\image\emergency2.jpg" />
+    <Content Include="Content\image\eye.png" />
+    <Content Include="Content\image\heart.png" />
     <Content Include="Content\image\home.jpg" />
     <Content Include="Content\image\maxresdefault.jpg" />
     <Content Include="Content\image\medicalwallpapers.jpg" />
@@ -324,6 +326,7 @@
     <Content Include="Views\Emergency\Create.cshtml" />
     <Content Include="Views\Pharmacy\Create.cshtml" />
     <Content Include="Views\Home\NearByHospital.cshtml" />
+    <Content Include="Views\Doctor\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

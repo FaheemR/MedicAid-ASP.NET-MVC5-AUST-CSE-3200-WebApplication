@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Doctor Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body background=@Url.Content("~/Content/image/medicalwallpapers2.jpg")>
+
+    <div class="container">
+        <div class="row rounded" style="background: linear-gradient(#4cff00, #ffd800); margin-bottom: 50px; border-radius: 25px; padding:14px;">
+            <h2>
+                Welcome!!
+            </h2>
+
+            <h4>
+                We have a vast number of doctor's information gathered from all over the country!
+            </h4>
+
+            <p style="font-size:15px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                You can find almost all well-known doctor's information from here. We have catagorized the doctors according to their field of speciality.
+                So that you can easily find the right doctor for you. So just choose your need category and get all avaiable and well-known doctor informations.
+            </p>
+        </div>
+
+        <div class="row" style="align-items:center; text-align:center; margin:auto;">
+            @{
+                int count = 1;
+                string className, imgName;
+                int total = ViewBag.doctorTypeCount;
+            }
+
+            @foreach (var speciality in ViewBag.doctorTypes)
+                {
+                    if (count % total == 1)
+                    {
+                        if(total >= 3)
+                        {
+                            className = "margin-left:10%";
+                        }
+
+                        else
+                        {
+                            className = "margin-left:25%";
+                        }
+
+                    }
+                    else
+                    {
+                        className = "";
+                    }
+
+                    count++;
+
+                    imgName = speciality + ".png";
+
+                <a href="Search?field=@speciality">
+
+
+                    <div class="col-md-3" style="border-right: 1px solid aliceblue;border-bottom: 1px solid aliceblue;
+                    align-content:center; color:aliceblue; background:rgba(128, 128, 128, 0.84); text-align:center; display:inline-block; border-radius: 20px; margin: 20px;  @className">
+
+                        <h3 style="color:aliceblue;">@speciality</h3>
+                        <br />
+                        <object data="~/Content/image/medi.png" type="image/png"  width="150" height="150" style="padding:4%; margin:4% 4% 24%; border-radius:10px;">
+                            <img src="~/Content/image/@imgName" width="150" height="150" style="padding:4%; margin:4% 4% 24%; border-radius:10px;">
+                        </object>
+                        
+
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</body>
+
+

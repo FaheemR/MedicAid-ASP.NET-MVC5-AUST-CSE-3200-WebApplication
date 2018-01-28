@@ -14,6 +14,12 @@ namespace MedicAid_MVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "DoctorSearch",
+                url: "Doctor/Search",
+                defaults: new { controller = "Doctor", action = "Search" }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

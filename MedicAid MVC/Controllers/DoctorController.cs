@@ -23,8 +23,27 @@ namespace MedicAid_MVC.Controllers
             _context.Dispose();
         }
 
+
         // GET: Doctor
-        public ActionResult Search(string nameFilter = "", string specialistFilter = "", string hospitalNameFilter = "")
+        public ActionResult Info(string specialistFilter = "")
+        {
+            var doctors = from doctor in _context.Doctors group doctor by doctor.Specialist into dateGroup select dateGroup.Key;
+
+            List<string> types = new List<string>();
+
+            foreach (var e in doctors.ToList())
+            {
+                types.Add(e);
+            }
+
+            ViewBag.doctorTypes = types;
+            ViewBag.doctorTypeCount = types.Count();
+
+            return View(doctors.ToList());
+        }
+
+        // GET: Doctor
+        public ActionResult Search(string nameFilter = "", string field = "", string hospitalNameFilter = "")
         {
             var doctors = from doctor in _context.Doctors select doctor ;
 
@@ -33,6 +52,7 @@ namespace MedicAid_MVC.Controllers
                 Doctors = doctors
             };*/
 
+            string specialistFilter = field;
 
             if (!string.IsNullOrEmpty(nameFilter))
             {
