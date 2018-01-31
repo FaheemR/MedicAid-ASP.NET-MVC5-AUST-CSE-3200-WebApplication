@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -102,6 +102,24 @@ namespace MedicAid_MVC.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                DoctorModel doctor = _context.Doctors.Find(id);
+                _context.Doctors.Remove(doctor);
+                _context.SaveChanges();
+            }
+            catch (RetryLimitExceededException/* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                return RedirectToAction("Search");
+            }
+            return RedirectToAction("Search");
         }
     }
 }

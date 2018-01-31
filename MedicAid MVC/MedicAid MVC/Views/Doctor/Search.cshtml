@@ -82,13 +82,19 @@
                                     <td>Not Available</td>
                                 }
 
-                                <td>
-                                    <button class="btn btn-xs btn-warning">Edit</button>
-                                </td>
+                                @if (User.IsInRole(RoleName.Admin))
+                                {
+                                    using (Html.BeginForm("Delete", "Doctor" , new {id = doctor.Id}))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <td>
+                                            <div class="form-actions no-color">
+                                                <input type="submit" value="Delete" class="btn btn-default" />
+                                            </div>
+                                        </td>
+                                    }
 
-                                <td>
-                                    <button class="btn btn-xs btn-danger">Delete</button>
-                                </td>
+                                }
                             </tr>
                         }
 
